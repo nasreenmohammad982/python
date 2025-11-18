@@ -1,9 +1,12 @@
 import streamlit as st
 
-st.title("🧠 Dynamic Text Analysis Platform ")
+# Title
+st.title("🧠 Dynamic Text Analysis Platform")
 
+# Subtitle
 st.subheader("Upload and analyze your text data")
 
+# Upload or paste text
 option = st.radio("Choose input method:", ["Upload File", "Paste Text"])
 
 text_data = ""
@@ -16,11 +19,12 @@ if option == "Upload File":
 else:
     text_data = st.text_area("Paste your text below:", "", height=200)
 
+# Analyze Button
 if st.button("🔍 Analyze Text"):
     if text_data.strip() == "":
         st.warning("Please provide some text to analyze.")
     else:
-        
+        # Simple analysis: word count, character count
         word_count = len(text_data.split())
         char_count = len(text_data)
         st.success("✅ Analysis Complete!")
